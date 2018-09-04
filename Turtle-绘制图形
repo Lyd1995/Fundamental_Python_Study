@@ -33,3 +33,5 @@ turtle.reset()清除窗口，将turtle的状态与位置恢复为默认值
 
 turtle.hideturtle()：隐藏turtle
 turtle.done()让绘制的图形长期保存
+
+turtle.write(s,font=("Arial",8,"normal"))在turtle的位置编写字符串s，字体是由字体名、字体大小、字体类型组成
