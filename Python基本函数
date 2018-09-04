@@ -16,5 +16,9 @@
   exp(x)=e**x(以e为底数)
   
   sin(x) x:弧度值    
-  degrees(x)将x从弧度转成角度
-  radians(x)弧度转为角度
+  degrees(x)弧度转成角度，x的值不会改变
+  radians(x)角度转为弧度
+  
+  注意：这里的函数都要写成math.xxx的形式，如math.degrees()
+  
+  
