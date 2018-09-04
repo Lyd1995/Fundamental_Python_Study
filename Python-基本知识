@@ -78,3 +78,15 @@ randrange(a,b)产生一个在a到b-1之间的随机整数
 （9）or
 （10）赋值运算符：=、+=、-=、*=、/=、//=、%=
 
+16、while循环
+while 布尔条件表达式（当表达式为真时，进入循环）
+
+17、for循环
+通常形式为：
+for i in range(initialValue,endValue,step)  range里面的都是整数
+step:步长，也可以是负数，这样的话就是反向计数了
+大于或者等于endValue的时候，就不再进入循环
+并且，在循环体内改变i的值，不影响循环的次数，即：循环次数由range确定
+
+或者
+for var in sequence
