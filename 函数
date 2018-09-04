@@ -1,0 +1,39 @@
+1、定义函数
+
+def functionName(list of parameters)   #函数头
+   函数体
+   需要返回值，用return
+   不写的话，会返回特殊值None
+   写成return或者return None也是返回None，好处是可以终止函数的调用
+   
+如果需要用到函数，可以先定义主函数main()，执行主函数
+
+
+2、函数文件（模块）及函数调用
+from 文件名（不用.py） import 函数名
+
+如果在同一个模块里，定义两个同名的函数，也不会出现语法错误，但是后一个函数的优先级高
+
+3、变量的作用域
+函数内部的是局部变量，另外定义在循环内部的变量也能在循环外部使用
+函数之外的是全局变量
+
+4、自带默认参数值的函数
+
+无默认参数写法： 
+  def printArea(width,height):
+带默认参数写法：
+  def printArea(width=1,height=5):
+  默认width=1,height=5
+  def printArea(width,height=5):
+  默认height=5
+  
+5、返回多个值
+  例如：
+  def sort(n1,n2):
+  .....
+  return n1,n2
+  
+相对的赋值的时候，也要两个变量一起赋值
+ 
+ 
