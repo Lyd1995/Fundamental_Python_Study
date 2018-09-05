@@ -3,7 +3,7 @@
 对象的三个特点：
 （1）特性：id，唯一编号
 
-（2）状态：所拥有的属性
+（2）状态：所拥有的属性，例如：一个圆对象由radius状态（属性）
 
 （3）行为：通过方法来实现行为
 
@@ -23,5 +23,57 @@ Python中对象所用的函数又被称为 ：方法
 方法只能从一个特定的对象中调用
 例如：字符串类型里面有：lower()返回小写字母（如果没有大写字母，则没有变化）、upper()返回大写字母（只对小写字母起作用）
 strip()作用是移除字符串两端的空格符
+
+
+4、定义类
+
+class ClassName:
+   initializer
+   methods
+   
+例如：
+import math
+
+class Circle:
+
+    def __init__(self,radius=1):
+        self.radius=radius
+
+    def getPerimeter(self):
+        return 2*self.radius*math.pi
+
+    def getArea(self):
+        return self.radius*self.radius*math.pi
+
+    def setRadius(self,radius):
+        self.radius=radius
+
+5、构造对象
+定义类之后，可以使用构造方法由类来创建对象，构造方法的两个任务：
+（1）在内存中为类创建一个对象
+（2）调用类的__inti__方法来初始化对象
+
+例如：
+c1=Circle()
+c5=Circle(5)
+
+对象成员是指它的数据域和方法：
+（1）数据域：又称实例变量，因为每个对象（实例）的数据域上都有一个特定值
+（2）方法：又称实例方法，因为方法被一个对象（实例）调用完成对象上的动作
+
+使用圆点.来访问对象成员
+
+self：是指向对象本身的参数，它的作用域是整个类
+
+
+  
+  
+  
+  
+  
+  
+     
+
+
 
 
