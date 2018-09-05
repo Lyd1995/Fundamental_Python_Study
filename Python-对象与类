@@ -94,8 +94,35 @@ methodName(parameterName:parameterType):returnType
 8、隐藏数据域
 为避免数据域被直接修改，不让客户端直接访问数据域，这被称为数据隐藏
 
+私有数据域：以两个下划线开始定义：__
+私有方法：同上
 
+私有数据域和方法可以在类内部被访问，但他们不能在类的外部被访问，也就是说只有该类的方法可以访问它
+因此提供一个get方法返回它的值；提供一个set方法来修改它的值
+例如：
+import math
 
+class Circle:
+
+    def __init__(self,radius=1):
+        self.__radius=radius
+
+    def getRadius(self):
+        return self.__radius
+
+    def getPerimeter(self):
+        return 2*self.__radius*math.pi
+    
+    def getArea(self):
+        return self.__radius*self.__radius*math.pi
+    
+使用两个下划线开头来命名私有数据域和方法，但不要以一个以上的下划线结尾，比如：__radius是一个私有数据域，但是__radius__并不是私有数据域
+
+9、封装与抽象
+
+类的抽象：指将类的实现与类的使用分离开来
+
+类的封装：实现的细节被封装并对用户隐藏
 
 
 
