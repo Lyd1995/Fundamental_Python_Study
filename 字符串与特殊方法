@@ -1,0 +1,124 @@
+1、字符串类（str类）
+
+该类是不可变的，因此一旦创建了这个字符串，那么它的内容就无法改变
+
+可以使用构造函数构建字符串
+s1=str()
+s2=str("Welcome")
+Python提供了一个简单语法：
+s1=""
+s2="Welcome"
+s3="Welcome"
+s4="welcome"
+Python使用一个对象来表示具有相同内容的字符串
+比如：s2和s3的id是相同的，这是因为s2与s3都指向了同一个对象
+事实上，Python里面，对所有的不可变对象，具有相同内容的变量都是指向了同一个对象
+
+2、函数
+
+（1）常用的字符串函数：
+len():返回字符串长度
+max():返回字符串中，ASCII值最大的那个字符
+min():返回字符串中，ASCII值最小的那个字符
+
+（2）下标运算符：[]
+字符串是一个字符序列，使用[]可以获取单个字符
+下标是基于0的，从0开始，范围：0到len(s）-1
+
+（3）截取运算符：[start:end]
+左闭右开，这一段就是从start开始到end-1的字符串
+起始下标和结束下标都可以忽略，默认是0和最后一个下标
+
+（4）连接运算符：+          
+s1="Welcome"
+s2="Python"
+
+s3=s1+"to"+s2
+print(s3)
+
+（5）复制运算符：*
+s4=s1*4
+print(s4)
+
+（6）in 和 not in运算符：用于测试一个字符串是否在另一个字符串里面
+s1="Welcome"
+print("c" in s1)    Ture
+
+（7）比较字符串（==  !=  >  <  >=  <=）
+比较的是ASCII值， print("a" < "ab")   Ture
+
+（8）迭代字符串
+一个字符串是可迭代的，这表明，可以用for循环去便利一个字符串中的所有字符
+s="hjdnsaiwrenczz"
+for ch in s:
+    print(ch)
+打印s中的每个字符
+
+（9）测试字符串
+isalnum():bool：如果这个字符串中的字符是字母数字且至少有一个字符，则返回Ture
+s="hjdnsaiwrencz3z"
+print(s.isalnum())   Ture
+s=""
+print(s.isalnum())   False
+
+
+isalpha():bool：如果这个字符串中的字符是字母且至少有一个字符，则返回Ture
+
+isdigit():bool：如果这个字符串中只含有数字字符则返回Ture
+
+isidentifier():bool：如果这个字符是Python的标识符则返回Ture
+
+islower():bool：如果这个字符串中全部都是小写字符，则返回Ture
+s=""
+print(s.islower())   False
+s="fafds dfssa+ asd/"
+print(s.islower())   Ture
+
+isupper():bool：如果这个字符串中全部都是大写字符，则返回Ture
+
+isspace():bool：如果这个字符串中只包含空格则返回Ture
+
+
+（10）搜索子串
+endwith(s1):bool   若字符串以s1结尾，返回Ture
+startwith(s1):bool     若字符串以s1开头，返回Ture
+
+find(s1):int     返回s1在这个字符串中的最小下标，不存在，返回-1
+rfind(s1):int    返回s1在这个字符串中的最大下标，不存在，返回-1
+
+count(s1):int    返回这个子串在字符串中出现的无覆盖的次数
+s="mommomom"
+print(s.count("mom"))   2次
+
+（11）转换字符串
+
+capitalize():str     返回这个复制的字符串并且只大写第一个字符
+
+lower():str          返回这个复制的字符串并且将所有字符都变为小写
+
+upper():str          返回这个复制的字符串并且将所有字符都变为大写
+
+title():str          返回这个复制的字符串并且将每个单词的首字母大写
+
+swapcase():str       返回这个复制的字符串并且将之前的小写字母转为大写，将之前的大写字母转成小写
+
+replace(old,new)     返回一个新的字符串，它用一个新字符串替换旧字符串所有出现的地方
+
+（12）删除空格
+lstrip():str    删除左边的空格
+rstrip():str    删除右边的空格
+strip():str     删除两端的空格
+
+（13）格式化字符串
+
+
+
+
+
+
+
+
+
+
+
+
