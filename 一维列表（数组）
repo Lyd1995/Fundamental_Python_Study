@@ -59,5 +59,10 @@ list.reverse()：将列表中的所有元素倒序
 
 8、将字符串分成列表
 
+split():默认是空格分隔；可以自己指定
+list9="dds afgf sfg".split()     ['dds', 'afgf', 'sfg'] 
+list10="2018/9/6".split("/")     ['2018', '9', '6']
 
-
+s=input()    
+items=s.split()
+lst=[eval(x) x for x in items]
