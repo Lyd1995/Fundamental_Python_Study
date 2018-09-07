@@ -8,4 +8,47 @@ matrix[i].append()#插入元素
 
 
 
+2、基本操作
+
+matrix=[[1,2,3],[4,3,2],[5,6,3]]
+
+# 输出每一个元素
+for i in matrix:
+    for v in i:
+        print(v,end=" ")
+    print()
+
+# 对所有元素求和
+total=0
+for i in matrix:
+    for v in i:
+        total+=v
+
+print(total)
+print()
+
+# 对每一列求和
+for j in range(matrix[0].__len__()):
+    s=0
+    for i in range(len(matrix)):
+        s+=matrix[i][j]
+    print(s)
+
+3、常用函数
+
+sum()：只能用于对行求和
+sort():按照元素的大小排序
+
+
+
+
+
+
+
+
+
+
+
+
+
 
