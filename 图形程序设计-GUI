@@ -1,1 +1,67 @@
+1、TKinter：Tk interface
+
+一个简单的例子
+from tkinter import  * # Import all definitions from tkinter
+
+window = Tk()
+label = Label(window ,text="Welcome to Python")
+button=Button(window ,text="Click me")
+label.pack()
+button.pack()
+window.mainloop()
+
+
+import：导入类，对象，函数
+from：表示来自某个模块
+
+设置按键文字的颜色
+from tkinter import  * # Import all definitions from tkinter
+
+def processOK():
+    print("Ok button is clicked!")
+
+def processCancel():
+    print(("Cancel button is clicked"))
+
+window = Tk()
+btOK=Button(window, text="OK",fg="red",command=processOK())##
+btCancle=Button(window, text="Cancel",fg="yellow",command=processCancel())
+
+btOK.pack()
+btCancle.pack()
+
+window.mainloop()
+
+command：关联一个回调函数
+fg:按键文字颜色
+bg:按键框颜色
+
+也可以定义一个类来实现上述功能，执行时，直接调用那个类，一般来说，推荐定义类来实现该功能，这样可以提高代码的可重用性
+
+2、
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
