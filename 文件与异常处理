@@ -1,0 +1,55 @@
+一、文件
+
+1、文件名
+
+绝对文件名：包含了绝对路径与文件名
+例如：C:\Users\84235\mystuff\ex3.py
+
+相对文件名：仅仅包含文件名
+例如：ex3.py
+
+2、文件分类
+（1）文本文件：能够使用文本编辑器处理或者notepad处理的，都是文本文件
+
+（2）二进制文件：除了文本文件，其他的都是二进制文件
+
+
+3、打开文件
+如何向（从）一个文件写（读）数据？
+需要创建一个和物理文件相关的文件对象（注意：无论物理文件本身是何种格式，都将创建同一类型的对象）
+
+打开文件的语法：
+fileVariable = open(filename,mode)
+mode:指定这个文件将被如何使用（读、写、读写...，r、w、a（从文件尾追加数据）、rb（读取二进制数据）、wb）
+
+打开当前目录下的文件，filename只要使用相对文件名即可
+其他目录下的文件，需要使用绝对文件名
+
+读取文件
+input=open("C:\\Users\\84235\\mystuff\\scores.txt","r")
+print(input.read())
+
+read(n:int):从文件中读取特定数目的字符，包括换行符；无参数时，将全部字符读取，存入字符串
+readline():读取下一行，返回字符串
+readlines():读取所有行,并将每一行作为一个字符串，存入字符串列表
+
+
+写入文件：
+input1=open("C:\\Users\\84235\\mystuff\\scores.txt","w")
+input1.write("Bill Clintion\n")
+input1.write("George Cl\n")
+input1.close()
+
+input=open("C:\\Users\\84235\\mystuff\\scores.txt","r")
+print(input.read())
+注意1：write写入会覆盖掉原来的内容，因为"w"是从头开始写的，如果不想覆盖，用"a"在文件尾追加内容
+
+注意2：使用write必须在每句最后加上换行符
+
+4、测试文件的存在性
+import  os.path
+
+if os.path.isfile("C:\\Users\\84235\\mystuff\\scores.txt")
+    print("file is exists")
+    
+    
