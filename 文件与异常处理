@@ -52,4 +52,6 @@ import  os.path
 if os.path.isfile("C:\\Users\\84235\\mystuff\\scores.txt")
     print("file is exists")
     
-    
+二、异常处理
+
+try
