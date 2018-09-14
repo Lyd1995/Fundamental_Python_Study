@@ -27,7 +27,7 @@ strip()作用是移除字符串两端的空格符
 
 4、定义类
 
-class ClassName:
+class ClassName (父类名，没有可以不写):
    initializer
    methods
    
