@@ -86,6 +86,8 @@ urlopen函数可以打开一个资源定位器，并从网上读取数据
 
 异常是在运行时出现的错误，使用try语句可以对异常进行处理
 
+1、处理异常语句try
+语法：
 try:
     <body>
 except<ExceptionType>:
@@ -96,12 +98,52 @@ else:
 finally:
     <process_finnal>
     
-except 异常类型：如果try中抛出异常，则按照顺序与except子句中的异常类型进行匹配，如果匹配某个except子句，则转入该段程序，之后的except子句将不会被执行
+except 异常类型：如果try中抛出异常，则按照顺序与except子句中的异常类型进行匹配
+如果匹配某个except子句，则转入该段程序，之后的except子句将不会被执行
+
+以下两个子句都是可选项：
 else：如果try中没有异常，那么执行完try后，便会执行else子句
 finally：无论有无异常，都会执行finally子句
 
-注：当有异常发生时，若有n个except子句，当前n-1个except子句都不匹配时，系统会默认匹配最后一个
+注：主函数有异常发生时，若有n个except子句，当前n-1个except子句都不匹配时，系统会默认匹配最后一个
+注：如果不是主函数，找不到匹配的异常类型，则会将这个异常抛给调用者，让调用者处理这个异常
 
+正确输入文件名：
+while True:
+    try:
+        filename=input("Enter a filename: ")
+        infile=open("filename","r")
+        break
+    except IOError:
+        print("File "+filename+" does not exists. Try again")
+ 
+ 
+2、抛出异常
+异常来自哪里？又是如何产生的？
+
+附属在异常上的信息包裹在一个对象中，异常产生于一个函数
+当这个函数检测到错误时，它将使用下面的语法从一个正确的异常类创建一个对象，并将这个异常抛给这个函数的调用者：
+raise ExceptionClass("Something is wrong")
+
+3、异常工作机制
+假设程序检测到传递给函数的一个参数与这个函数的合约冲突
+例如：这个参数必须是非负的，但是传递了一个负数，这个程序将会创建一个RuntimeError类的实例，并将它抛出
+
+ex=RuntimeError("Wrong argument")
+raise ex
+上述两句可以合并为一句：raise RuntimeError("Wrong argument")
+
+raise一般与if连用
+
+4、异常类型
+ZeroDivisionError:
+TypeError
+IndexError
+RuntimeError
+IOError
+NameError
+
+5、使用对象处理异常
 
 
 
