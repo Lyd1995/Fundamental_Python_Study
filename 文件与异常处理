@@ -82,5 +82,26 @@ urlopen函数可以打开一个资源定位器，并从网上读取数据
 
 
 二、异常处理
+上一节中，如果输入的文件或者URL不存在，则会抛出一个IO异常（IOError）
 
-try
+异常是在运行时出现的错误，使用try语句可以对异常进行处理
+
+try:
+    <body>
+except<ExceptionType>:
+    <handler>
+.....
+else:
+    <process_else>
+finally:
+    <process_finnal>
+    
+except 异常类型：如果try中抛出异常，则按照顺序与except子句中的异常类型进行匹配，如果匹配某个except子句，则转入该段程序，之后的except子句将不会被执行
+else：如果try中没有异常，那么执行完try后，便会执行else子句
+finally：无论有无异常，都会执行finally子句
+
+注：当有异常发生时，若有n个except子句，当前n-1个except子句都不匹配时，系统会默认匹配最后一个
+
+
+
+
