@@ -144,6 +144,28 @@ IOError
 NameError
 
 5、使用对象处理异常
+例如：
+try:
+    number=eval(input("Enter a number: "))
+    print("The number entered is ",number)
+except NameError as ex:
+    print("Exception: ",ex)
+输出：
+Enter a number: k
+Exception:  name 'k' is not defined
+
+6、自定义异常类：
+
+大部分的异常ZeroDivisionError、TypeError、IndexError等继承自StandardError类
+StandardError类继承自Exception类
+Exception类继承自BaseException类
+
+可以根据以上的异常类型，自定义一个异常子类：
+例如：
+class InvalidRadiusError(RuntimeError):
+     def __init__(self):
+        super.__init__()
+        self.radius=radius
 
 
 
