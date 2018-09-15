@@ -52,6 +52,35 @@ import  os.path
 if os.path.isfile("C:\\Users\\84235\\mystuff\\scores.txt")
     print("file is exists")
     
+
+5、追加数据
+input=open("C:\\Users\\84235\\mystuff\\scores.txt","a")
+
+6、读取写入数据
+from  random import  randint
+def main():
+    # 打开文件
+    outfile=open("C:\\Users\\84235\\mystuff\\scores.txt","w");
+
+    # 写入数据
+    for i in range(5):
+        outfile.write(str(randint(0,9))+" ")
+    outfile.close();
+
+    infile=open("C:\\Users\\84235\\mystuff\\scores.txt","r");
+    s=infile.read()
+    numbers=[eval(x) for x in s.split()]
+
+    for i in range(numbers.__len__()):
+        print(numbers[i])
+main()
+注意：这里和java有所不同，需要自己手动将空格去掉
+
+7、从网站上获取数据
+urlopen函数可以打开一个资源定位器，并从网上读取数据
+
+
+
 二、异常处理
 
 try
