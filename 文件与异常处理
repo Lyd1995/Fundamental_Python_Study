@@ -80,6 +80,12 @@ main()
 urlopen函数可以打开一个资源定位器，并从网上读取数据
 
 
+8、json文件
+
+存入json文件：json.dump(dataName,fileObject)
+
+加载：dataName=json.load(fileObject)
+
 
 二、异常处理
 上一节中，如果输入的文件或者URL不存在，则会抛出一个IO异常（IOError）
