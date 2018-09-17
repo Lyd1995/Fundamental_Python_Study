@@ -142,6 +142,7 @@ IndexError
 RuntimeError
 IOError
 NameError
+FileNotFoundError
 
 5、使用对象处理异常
 例如：
