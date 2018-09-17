@@ -168,4 +168,20 @@ class InvalidRadiusError(RuntimeError):
         self.radius=radius
 
 
+7、with的使用
+python 2.5以后增加了with表达式的语法
 
+class controlled_execution:
+    def __enter__(self):
+        set things up
+        return thing
+    def __exit__(self, type, value, traceback):
+        tear things down
+
+with controlled_execution() as thing:
+        do something
+在这里，python使用了with-as的语法。当python执行这一句时，会调用__enter__函数，
+然后把该函数return的值传给as后指定的变量。
+之后，python会执行下面do something的语句块。
+最后不论在该语句块出现了什么异常，都会在离开时执行__exit__。 
+with-as表达式极大的简化了每次写finally的工作，这对保持代码的优雅性是有极大帮助的。
