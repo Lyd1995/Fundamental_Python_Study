@@ -21,8 +21,15 @@
   
   注意：这里的函数都要写成math.xxx的形式，如math.degrees()
   
- 8、ord(c)返回字符c的ASCII
+  
+  
+ 8、字符的ASCII值与字符之间的转换
+ 
+    ord(c)返回字符c的ASCII
     chr(x)返回ASCII为整数x的字符
+
+
+
 
 9、转义序列
 
