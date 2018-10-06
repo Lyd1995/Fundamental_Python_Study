@@ -1,6 +1,6 @@
-1、TKinter：Tk interface
+一、TKinter：Tk interface
 
-一个简单的例子
+1、引例
 from tkinter import  * # Import all definitions from tkinter
 
 window = Tk()
@@ -156,3 +156,28 @@ class WidegetsDemo:
 
 WidegetsDemo()
 
+二、显示图像
+
+
+Button  一个用来执行一条命令的简单按钮（按下可以调用一个函数）
+
+Canvas  结构化的图形
+用于绘制图形、创建图形编辑器以及实现自定制的小构件类
+
+Checkbutton   单击复选按钮，在值之间切换
+
+Entry 一个文本输入域，也被称为文本域或者文本框
+
+Frame  包含其他小构件的一个容器小构件
+
+Label  显示文本或者图形
+
+Menu  用来实现下拉或者弹出菜单的菜单栏
+
+Menubutton  用来实现下拉菜单的菜单按钮
+
+Message  显示文本，与Label相似，但是它能自动地将文本放在给定的宽度或者宽高比内
+
+Radiobutton  单击单选按钮，设置变量为指定值，同时清除所有和同一个变量相关联的其他单选按钮
+
+Text  格式化的文本显示，允许使用不同风格和属性显示，也支持文本编辑和内嵌图片与窗口
