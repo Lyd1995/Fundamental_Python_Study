@@ -206,3 +206,17 @@ create_text(x, y, text)：文本
 
 示例：
 Canvas.create_oval(10, 10, 190, 90, fill="red", tags="oval")
+
+2、显示图像
+这个功能很低级，只能打开GIF格式的图片
+使用PhotoImage类创建图像
+
+photo = PhotoImage(file = imagefilename)
+对于PhotoImage对象只能在一个线程下使用，在主要模块中已经用TK()启动一个线程，再在次模块中启动一个线程就不能调用PhotoImage对象。
+所以开启希望开启次窗口可采用用frame或者toplevel去代替。
+
+
+四、鼠标、按键事件和绑定
+
+可以使用bind方法，将鼠标和按键事件绑定到一个小构件
+
