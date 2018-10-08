@@ -1,4 +1,5 @@
-一、TKinter：Tk interface
+一、基本小构件
+TKinter：Tk interface
 
 1、引例
 from tkinter import  * # Import all definitions from tkinter
@@ -156,28 +157,52 @@ class WidegetsDemo:
 
 WidegetsDemo()
 
-二、显示图像
+二、几何管理器
+
+Tkinter使用几何管理器将小构件放入容器内
+
+首先每个小构件第一个参数都是容器（Frame()或者Tk()类型的，是指将这个小构件放在什么位置）
+其次，拥有text（在小构件上显示文字）、image（设置小构件的图形）属性
+
+1、包管理器：pack
+包管理器，将小构件依次地一个放置在另一个的顶部或者将它们挨个挨个地放置，可以通过fill选项将小构件充满它的容器
+
+参数：
+（1）side：设置为LEFT时，下一个小构件将被放在左侧，默认情况下是TOP放在前一个小构件的下面
+意思是，放置的小构件向哪边对齐，LEFT是每次小构件都放置在左边，TOP每次都往顶上放置，因此第一个小构件在最上方，第二个则在第一个下面
+（2）fill：X（水平填充）、Y（垂直填充）、BOTH（水平和垂直两个方向都填充）
+（3）expand：告诉包管理器分配额外的空间给小构件，数值必须大于0
+
+示例：
+Label(window, text="blue", bg="blue").pack()
+Label(window, text="red", bg="red").pack(fill=BOTH, expand=1)
+Label(window, text="green", bg="green").pack(side=LEFT,fill=X)
 
 
-Button  一个用来执行一条命令的简单按钮（按下可以调用一个函数）
+2、网格管理器：grid
+网管管理器将小构件放置在容器中一个看不见的网格的每个单元中
+可以将小构件放置在某个特定的行与列
+如果想将小构件放置在多行多列，可以使用rowspan和columnspan
 
-Canvas  结构化的图形
-用于绘制图形、创建图形编辑器以及实现自定制的小构件类
+message.grid(row=1, column=1, rowspan=3, columnspan=4)
 
-Checkbutton   单击复选按钮，在值之间切换
+3、位置管理器：place
+将小构件放置在绝对位置上
+例如：
+Label(window, text="llll").place(x=20, y=20)
 
-Entry 一个文本输入域，也被称为文本域或者文本框
 
-Frame  包含其他小构件的一个容器小构件
+三、画布：Canvas
 
-Label  显示文本或者图形
+************可以使用Canvas小构件来显示图形
 
-Menu  用来实现下拉或者弹出菜单的菜单栏
+1、简单几何图形
+create_rectangle(x1, y1, x2, y2)：矩形
+create_oval(x1, y1, x2, y2)：椭圆（这里的两个点的坐标是椭圆外接矩形的左上角、右下角的坐标）
+create_arc(x1, y1, x2, y2, start, extent)：圆弧
+create_polygon(x1, y1, x2, y2, x3, y3)：多边形（有多少个点，写多少参数）
+create_line(x1, y1, x2, y2)：线段
+create_text(x, y, text)：文本
 
-Menubutton  用来实现下拉菜单的菜单按钮
-
-Message  显示文本，与Label相似，但是它能自动地将文本放在给定的宽度或者宽高比内
-
-Radiobutton  单击单选按钮，设置变量为指定值，同时清除所有和同一个变量相关联的其他单选按钮
-
-Text  格式化的文本显示，允许使用不同风格和属性显示，也支持文本编辑和内嵌图片与窗口
+示例：
+Canvas.create_oval(10, 10, 190, 90, fill="red", tags="oval")
