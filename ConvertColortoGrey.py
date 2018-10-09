@@ -68,3 +68,73 @@ def main():
     win1.close()
 
 main()
+
+
+"""
+from graphics import *
+
+
+def main():
+    win = GraphWin("Color Image", 1500, 800, autoflush=False)
+    win.setCoords(0.0, 0.0, 10.0, 10.0)
+
+    Text(Point(1, 9.5), "Enter name of image : ").draw(win)
+    inputText = Entry(Point(2, 9.5), 10)
+    inputText.draw(win)
+
+    button = Text(Point(1.5, 8), "Show color image")
+    button.draw(win)
+    Rectangle(Point(1, 7.5), Point(2, 8.5)).draw(win)
+
+    win.update()
+    win.getMouse()
+
+    imageName = inputText.getText()
+    image1 = Image(Point(5, 5), imageName)
+    image1.draw(win)
+    print(image1)
+
+    maxx = image1.getWidth()
+    maxy = image1.getHeight()
+
+    button.setText("Convert to greyscale")
+
+    win.update()
+    win.getMouse()
+
+    button.setText("Converting....")
+
+    for i in range(maxx):
+        for j in range(maxy):
+            rgb = image1.getPixel(i, j)
+            r, g, b = rgb[0], rgb[1], rgb[2]
+
+            gray = int(round(0.299*r + 0.587*g + 0.114*b))
+            image1.setPixel(i, j, color_rgb(gray, gray, gray))
+            win.update()
+
+    button.setText("Save image")
+    win.update()
+    win.getMouse()
+
+    win1 = GraphWin("Gray image", 400, 300)
+    win1.setCoords(0.0, 0.0, 10.0, 10.0)
+
+    Text(Point(3, 7), "Enter name of image : ").draw(win1)
+    inputText = Entry(Point(6.5, 7), 10)
+    inputText.draw(win1)
+
+    button = Text(Point(3, 3), "Save")
+    button.draw(win1)
+    Rectangle(Point(1.5, 2.25), Point(4.5, 3.75)).draw(win1)
+
+    win1.getMouse()
+    imageName = inputText.getText()
+    image1.save(imageName)
+
+    win1.close()
+    win.close()
+
+main()
+
+"""
