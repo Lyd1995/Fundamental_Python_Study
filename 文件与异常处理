@@ -87,6 +87,80 @@ urlopen函数可以打开一个资源定位器，并从网上读取数据
 加载：dataName=json.load(fileObject)
 
 
+9、当行数未知时
+例如：（这个是错误的使用方法）
+from Student import student
+
+
+def makeStudent(studentline):
+    line = studentline.split()
+    s = student(line[0], line[1], line[2])
+    return s
+
+
+def main():
+    list_student = []
+    # 获取学生信息，建立学生表
+    inputs = open("student1.txt", "r")
+
+    maxgpa = 0
+    i = 0
+    for line in inputs:（这里的line是从文件里读取的一行）
+        list_student.append(makeStudent(inputs.readline()))（这里读取的是下一行，漏了一行）
+        # print(list_student[i].getName())
+        if list_student[i].getGPA() > maxgpa:
+            maxgpa = list_student[i].getGPA()
+        i = i + 1
+    inputs.close()
+    # 找出GPA最高的所有学生，并打印出来
+    for i in range(len(list_student)):
+        if list_student[i].getGPA() >= maxgpa - 1e-10 and list_student[i].getGPA() <= maxgpa + 1e-10 :
+            print(list_student[i].getName())
+
+
+main()
+
+可以使用：
+for line in inputs:(可以自动按行读取)
+
+
+
+示例2：
+from Student import student
+
+
+def makeStudent(studentline):
+    line = studentline.split()
+    s = student(line[0], line[1], line[2])
+    return s
+
+
+def main():
+    list_student = []
+    # 获取学生信息，建立学生表
+    inputs = open("student1.txt", "r")
+
+    maxgpa = 0
+    i = 0
+    for lines in inputs:
+        list_student.append(makeStudent(lines))
+        # print(list_student[i].getName())
+        if list_student[i].getGPA() > maxgpa:
+            maxgpa = list_student[i].getGPA()
+        i = i + 1
+    inputs.close()
+    # 找出GPA最高的所有学生，并打印出来
+    for i in range(len(list_student)):
+        if list_student[i].getGPA() >= maxgpa - 1e-10 and list_student[i].getGPA() <= maxgpa + 1e-10 :
+            print(list_student[i].getName())
+
+
+main()
+
+
+
+
+
 二、异常处理
 上一节中，如果输入的文件或者URL不存在，则会抛出一个IO异常（IOError）
 
